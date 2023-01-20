@@ -1,0 +1,2 @@
+// faire un test avec l'écriture *s1 sur une fonction simple pour voir si ça marche, avecle ++ et tout
+// check que strlen prend bien en compte le \0
