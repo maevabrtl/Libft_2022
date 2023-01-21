@@ -1,2 +1,10 @@
 // faire un test avec l'écriture *s1 sur une fonction simple pour voir si ça marche, avecle ++ et tout
-// check que strlen prend bien en compte le \0
+
+#include "includes/libft.h"
+
+A faire partie 2 :
+- sub et trim a reprendre
+- split a poser
+- itoa
+- 2 fonction de pointeurs sur fonction
+- fonctions fd
