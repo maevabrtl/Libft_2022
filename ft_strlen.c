@@ -6,18 +6,18 @@
 /*   By: Maya <Maya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 08:39:41 by mabertha          #+#    #+#             */
-/*   Updated: 2022/12/23 17:12:23 by Maya             ###   ########.fr       */
+/*   Updated: 2023/01/23 20:57:19 by Maya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {
 	size_t i;
 
 	i = 0;
-	while (s && s[i])
+	while (s[i])
 		i++;
 	return (i);
 }

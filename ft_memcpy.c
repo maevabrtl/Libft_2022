@@ -6,24 +6,25 @@
 /*   By: Maya <Maya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 08:39:21 by mabertha          #+#    #+#             */
-/*   Updated: 2023/01/23 15:18:52 by Maya             ###   ########.fr       */
+/*   Updated: 2023/01/24 13:08:58 by Maya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
-void *ft_memcpy(void *s1, const void *s2, size_t n)
+void	*ft_memcpy(void *s1, const void *s2, size_t n)
 {
-	unsigned char	*src;
-	unsigned char	*dest;
-	size_t			i;
+	size_t	i;
 
-	src = s2;
-	dest = s1;
-	while (dest[i] && i < n)
+	if (!s1 && !s2)
+		return (NULL);
+	i = 0;
+	while (i < n)
 	{
-		dest[i] = src[i];
+		((unsigned char *)s1)[i] = ((unsigned char *)s2)[i];
 		i++;
 	}
-	return ((void *)dest);
+	if (i < n)
+		((unsigned char *)s1)[i] = '\0';
+	return (s1);
 }

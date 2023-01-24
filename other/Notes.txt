@@ -1,6 +1,12 @@
 // faire un test avec l'écriture *s1 sur une fonction simple pour voir si ça marche, avecle ++ et tout
 
-#include "includes/libft.h"
+#include "libft.h"
+
+Debug :
+- t2 -> ft_substr
+- t4 -> substr
+
+
 
 A faire partie 2 :
 - split a poser

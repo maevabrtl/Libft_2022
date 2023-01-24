@@ -1,4 +1,4 @@
-#include "includes/libft.h"
+#include "libft.h"
 
 int	nb_len(long n)
 {
@@ -18,7 +18,7 @@ int	nb_len(long n)
 	return (ret);
 }
 
-int	itoa_neg(long n, char *str)
+long	itoa_neg(long n, char *str)
 {
 	if (n < 0)
 	{

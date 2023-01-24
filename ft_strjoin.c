@@ -1,23 +1,4 @@
-/*
-Function name						ft_strjoin
-
-Prototype 							char *ft_strjoin(char const *s1, char const *s2);
-
-Fichiers de rendu 					-
-
-Paramètres							s1: La chaîne de caractères préfixe.
-									s2: La chaîne de caractères suffixe.
-
-Valeur de retour 					La nouvelle chaîne de caractères.
-									NULL si l’allocation échoue.
-
-Fonctions externes autorisées		malloc
-
-Description							Alloue (avec malloc(3)) et retourne une nouvelle
-									chaîne, résultat de la concaténation de s1 et s2.
-*/
-
-#include "includes/libft.h"
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -37,6 +18,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i = 0;
 	while (s2[i])
 		newstr[j++] = s2[i++];
-	newstr[i] = '\0';
+	newstr[j] = '\0';
 	return (newstr);
 }

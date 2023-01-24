@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabertha <mabertha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Maya <Maya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 12:45:38 by mabertha          #+#    #+#             */
-/*   Updated: 2022/11/24 00:04:53 by mabertha         ###   ########.fr       */
+/*   Updated: 2023/01/23 20:46:14 by Maya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
-int	isascii(int c)
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);

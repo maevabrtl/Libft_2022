@@ -1,9 +1,8 @@
-#include "includes/libft.h"
+#include "libft.h"
 
 char **ft_split(char const *s, char c)
 {
-	char *ret;
-
-	ret = ft_strchr(s, c);
-	return (&ret);
+	(void)s;
+	(void)c;
+	return (NULL);
 }

@@ -6,11 +6,11 @@
 /*   By: Maya <Maya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 03:05:32 by mabertha          #+#    #+#             */
-/*   Updated: 2023/01/20 11:59:19 by Maya             ###   ########.fr       */
+/*   Updated: 2023/01/23 20:23:38 by Maya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
