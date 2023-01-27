@@ -6,14 +6,13 @@
 /*   By: Maya <Maya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 13:53:58 by mabertha          #+#    #+#             */
-/*   Updated: 2023/01/23 21:08:56 by Maya             ###   ########.fr       */
+/*   Updated: 2023/01/27 14:11:47 by Maya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-// # include "colors.h"
 # include <unistd.h>
 # include <stdlib.h>
 
@@ -64,5 +63,14 @@ char			*ft_itoa(int n);
 char			*utoa(size_t n, int base, int majbase);
 char			*ft_itoa_base(int n, int base);
 char			*ft_strnstr (const char *big, const char *little, size_t len);
+t_list			*ft_lstnew(void *content);
+void			ft_lstadd_front(t_list **lst, t_list *new);
+int				ft_lstsize(t_list *lst);
+t_list			*ft_lstlast(t_list *lst);
+void			ft_lstadd_back(t_list **lst, t_list *new);
+void			ft_lstdelone(t_list *lst, void (*del)(void *));
+void			ft_lstclear(t_list **lst, void (*del)(void *));
+void			ft_lstiter(t_list *lst, void (*f)(void *));
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif

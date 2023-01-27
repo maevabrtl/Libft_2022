@@ -6,13 +6,14 @@
 #    By: Maya <Maya@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/18 13:26:09 by mabertha          #+#    #+#              #
-#    Updated: 2023/01/23 20:22:38 by Maya             ###   ########.fr        #
+#    Updated: 2023/01/27 15:07:52 by Maya             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: all clean fclean re
 
 NAME = libft.a
+NAME_BONUS = libft_bonus.a
 CC = gcc
 CC_FLAGS = -Wall -Wextra -Werror
 SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
@@ -23,16 +24,22 @@ ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c \
 ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c \
 ft_tolower.c ft_toupper.c
 OBJS = $(SRCS:.c=.o)
+BONUS_SRCS = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c \
+ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c
+BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 INC = libft.h
 
 #*****************************************************************************#
-#                                   RULES                                     #
+#                                   Rules                                     #
 #*****************************************************************************#
 
 all: $(NAME)
 
+bonus: $(NAME) $(BONUS_OBJS)
+	ar rcs $(NAME) $(BONUS_OBJS)
+
 clean:
-	rm -rf $(OBJS)
+	rm -rf $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	rm -f $(NAME)
