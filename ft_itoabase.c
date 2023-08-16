@@ -31,7 +31,7 @@ static int	neg(int n, char *ret)
 	return (-n);
 }
 
-char		*ft_itoa_base(int n, int base)
+char		*ft_itoabase(int n, int base)
 {
 	char	*ret;
 	int		nlen;
