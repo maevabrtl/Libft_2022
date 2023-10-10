@@ -6,7 +6,7 @@
 #    By: Maya <Maya@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/18 13:26:09 by mabertha          #+#    #+#              #
-#    Updated: 2023/08/16 08:24:15 by Maya             ###   ########.fr        #
+#    Updated: 2023/10/09 21:06:43 by Maya             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ INC = libft.h
 all: $(NAME)
 
 clean:
-	rm -rf $(OBJS) $(BONUS_OBJS)
+	rm -rf $(OBJS)
 
 fclean: clean
 	rm -f $(NAME)

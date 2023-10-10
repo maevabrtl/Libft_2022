@@ -6,7 +6,7 @@
 /*   By: Maya <Maya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 13:53:58 by mabertha          #+#    #+#             */
-/*   Updated: 2023/07/13 20:43:06 by Maya             ###   ########.fr       */
+/*   Updated: 2023/10/09 20:45:54 by Maya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ char			*ft_itoa(int n);
 char			*ft_itoabase(int n, int base);
 char			*ft_utoabase(size_t n, int base, int majbase);
 char			*ft_strnstr (const char *big, const char *little, size_t len);
-t_list			*ft_lstnew(void *content);
+t_list			*ft_lstnew(char *content);
 void			ft_lstfree(t_list **lst);
 void			ft_lstadd_front(t_list **lst, t_list *new);
 int				ft_lstsize(t_list *lst);
