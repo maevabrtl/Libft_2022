@@ -1,19 +1,17 @@
 #include "libft.h"
 
-char	*ft_strndup(const char *s, int n)
+char	*ft_strndup(const char *str, size_t n)
 {
-	int		i;
-	char	*str;
+	size_t	len;
+	char	*copy;
 
-	i = 0;
-	str = malloc(sizeof(char) * n);
-	if (str == NULL)
+	len = 0;
+	while (len < n && str[len])
+		len++;
+	copy = malloc(sizeof(char) * len + 1);
+	if (copy == NULL)
 		return (NULL);
-	while (i < n)
-	{
-		str[i] = s[i];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
+	ft_memcpy(copy, str, len);
+	copy[len] = '\0';
+	return (copy);
 }

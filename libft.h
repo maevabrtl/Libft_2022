@@ -6,7 +6,7 @@
 /*   By: Maya <Maya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 13:53:58 by mabertha          #+#    #+#             */
-/*   Updated: 2023/10/09 20:45:54 by Maya             ###   ########.fr       */
+/*   Updated: 2023/10/11 03:18:54 by Maya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void			ft_striteri(char *s, void (*f)(unsigned int, char*));
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strdup(const char *s);
-char			*ft_strndup(const char *s, int n);
+char			*ft_strndup(const char *str, size_t n);
 char			**ft_split(char const *s, char c);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
