@@ -7,8 +7,8 @@ t_list	*ft_lstnew(char *content)
 	lst = malloc(sizeof(t_list));
 	if (lst == NULL)
 		return (NULL);
-	lst->content = ft_strndup(content, (int)ft_strlen(content) + 1);
-	if (lst->content == NULL)
+	lst->content = content;
+    if (lst->content == NULL)
 	{
 		free(lst);
 		return (NULL);

@@ -31,6 +31,8 @@ static int	neg(int n, char *ret)
 	return (-n);
 }
 
+#include <stdio.h>
+
 char		*ft_itoabase(int n, int base)
 {
 	char	*ret;

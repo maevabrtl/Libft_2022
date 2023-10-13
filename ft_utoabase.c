@@ -28,6 +28,7 @@ char		*check_base(int majbase, int base)
 	return (str);
 }
 
+#include <stdio.h>
 char		*ft_utoabase(size_t n, int base, int majbase)
 {
 	char	*ret;
@@ -35,6 +36,7 @@ char		*ft_utoabase(size_t n, int base, int majbase)
 	size_t	i;
 	char	*strbase;
 
+	// dprintf(2, "1. in utoabase n = %zu, base = %d\n", n, base);
 	strbase = check_base(majbase, base);
 	if (strbase == NULL)
 		return (NULL);
@@ -51,5 +53,6 @@ char		*ft_utoabase(size_t n, int base, int majbase)
 		n /= base;
 		i--;
 	}
+	// dprintf(2, "convert: %s\n", ret);
 	return (ret);
 }

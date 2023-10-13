@@ -3,14 +3,15 @@
 void	ft_lstfree(t_list **lst)
 {
 	t_list	*tmp;
+    t_list  *current;
 
-	while (*lst != NULL)
+    current = *lst;
+	while (current != NULL)
 	{
-		tmp = ((*lst)->next);
-		free((*lst)->content);
-		free((*lst)->next);
-		free(*lst);
-		*lst = tmp;
+		tmp = (current->next);
+		free(current->content);
+		free(current);
+		current = tmp;
 	}
-	free(lst);
+    *lst = NULL;
 }
