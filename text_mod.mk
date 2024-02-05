@@ -13,6 +13,8 @@ EFFECT_UNDO := 2
 # Those are the effects (blink seemingly doesn't work, at least on my computer)
 NORMAL := 0;
 BOLD := 1;
+DIM := 2;
+ITALIC := 3;
 UNDERLINE := 4;
 BLINK := 5;
 INVERT := 7;
@@ -60,5 +62,4 @@ RESET := \033[0m
 #		echo "\033[1;36mLibrary ready to use !\033[0m"
 
 
-# Sources :	https://www.shellhacks.com/bash-colors/
-#			https://www.padok.fr/en/blog/beautiful-makefile-awk
+# Sources :	https://misc.flogisoft.com/bash/tip_colors_and_formatting
