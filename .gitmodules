@@ -1,6 +1,0 @@
-[submodule "GNL"]
-	path = GNL
-	url = git@github.com:maevabrtl/GNL_2023.git
-[submodule "Printf"]
-	path = Printf
-	url = git@github.com:maevabrtl/Ft_Printf_2023.git

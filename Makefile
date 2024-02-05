@@ -74,23 +74,45 @@ SRC_STRS := $(addprefix $(PATH_SRC_STRS), $(addsuffix .c , $(FILES_STRS)))
 
 PATH_SRC_PRINTS := $(PATH_SRC)Prints/
 PATH_OBJ_PRINTS := $(PATH_OBJ)Prints/
-FILES_PRINTS := ft_putchar_fd ft_putendl_fd ft_putnbr_fd ft_putstr_fd
+FILES_PRINTS := ft_putchar_fd ft_putendl_fd ft_putnbr_fd ft_putstr_fd\
+				ft_putstr_withsize_fd
 OBJ_PRINTS := $(addprefix $(PATH_OBJ_PRINTS), $(addsuffix .o , $(FILES_PRINTS)))
 SRC_PRINTS := $(addprefix $(PATH_SRC_PRINTS), $(addsuffix .c , $(FILES_PRINTS)))
 
 #******************************************************************************#
-#                                    ALL                                       #
+#                                    PRINTF                                    #
+#******************************************************************************#
+
+# PATH_SRC_PRINTF := $(PATH_SRC)Printf/
+# PATH_OBJ_PRINTF := $(PATH_OBJ)Printf/
+# FILES_PRINTF := ft_printf ft_printf_formats
+# OBJ_PRINTF := $(addprefix $(PATH_OBJ_PRINTF), $(addsuffix .o , $(FILES_PRINTF)))
+# SRC_PRINTF := $(addprefix $(PATH_SRC_PRINTF), $(addsuffix .c , $(FILES_PRINTF)))
+
+#******************************************************************************#
+#                                      GNL                                     #
+#******************************************************************************#
+
+# PATH_SRC_GNL := $(PATH_SRC)GNL/
+# PATH_OBJ_GNL := $(PATH_OBJ)GNL/
+# FILES_GNL := get_next_line get_next_line_utils
+# OBJ_GNL := $(addprefix $(PATH_OBJ_GNL), $(addsuffix .o , $(FILES_GNL)))
+# SRC_GNL := $(addprefix $(PATH_SRC_GNL), $(addsuffix .c , $(FILES_GNL)))
+
+#******************************************************************************#
+#                                     ALL                                      #
 #******************************************************************************#
 
 PATHS_OBJ := $(PATH_OBJ) $(PATH_OBJ_CHARS) $(PATH_OBJ_GNL) $(PATH_OBJ_CONV)\
 		$(PATH_OBJ_LISTS) $(PATH_OBJ_MEMORY) $(PATH_OBJ_PRINTS) $(PATH_OBJ_STRS)\
-		$(PATH_OBJ_PRINTF)
+		# $(PATH_OBJ_PRINTF) $(PATH_OBJ_GNL)
 OBJS := $(OBJ_CHARS) $(OBJ_GNL) $(OBJ_CONV) $(OBJ_LISTS) $(OBJ_MEMORY)\
-		$(OBJ_PRINTS) $(OBJ_STRS) $(OBJ_PRINTF)
+		$(OBJ_PRINTS) $(OBJ_STRS) # $(OBJ_PRINTF) $(OBJ_GNL)
 SRCS := $(SRC_CHARS) $(SRC_GNL) $(SRC_CONV) $(SRC_LISTS) $(SRC_MEMORY)\
-		$(SRC_PRINTS) $(SRC_STRS) $(SRC_PRINTF)
+		$(SRC_PRINTS) $(SRC_STRS) # $(SRC_PRINTF) $(SRC_GNL)
 FILES := $(FILES_CHARS) $(FILES_GNL) $(FILES_CONV) $(FILES_LISTS)\
-		$(FILES_MEMORY) $(FILES_PRINTS) $(FILES_STRS) $(FILES_PRINTF)
+		$(FILES_MEMORY) $(FILES_PRINTS) $(FILES_STRS) # $(FILES_PRINTF)\
+		# $(FILES_GNL)
 
 #*****************************************************************************#
 #                                   RULES                                     #

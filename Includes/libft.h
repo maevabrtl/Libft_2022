@@ -6,15 +6,20 @@
 /*   By: Maya <Maya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 13:53:58 by mabertha          #+#    #+#             */
-/*   Updated: 2023/10/13 23:40:27 by Maya             ###   ########.fr       */
+/*   Updated: 2024/02/05 19:34:47 by Maya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <unistd.h>
+# include <stdio.h>
 # include <stdlib.h>
+# include <stdarg.h>
+# include <unistd.h>
+# include <stddef.h>
+# include "printf.h"
+// # include "gnl.h"
 
 typedef struct	s_list
 {
@@ -52,6 +57,8 @@ char			*ft_strdup(const char *s);
 char			*ft_strndup(const char *str, size_t n);
 char			**ft_split(char const *s, char c);
 void			ft_putstr_fd(char *s, int fd);
+int				ft_putstr_withsize_fd(char *to_print,
+				int fd, int size_to_print);
 void			ft_putnbr_fd(int n, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putchar_fd(char c, int fd);
