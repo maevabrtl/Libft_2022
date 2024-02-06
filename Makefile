@@ -118,10 +118,7 @@ FILES := $(FILES_CHARS) $(FILES_CONV) $(FILES_LISTS)\
 #                                   RULES                                     #
 #*****************************************************************************#
 
-all::
-	@echo
-
-all:: $(NAME)
+all: $(NAME)
 
 clean:
 	@rm -rf $(PATH_OBJ)
@@ -137,17 +134,17 @@ re: fclean all
 
 $(NAME): $(PATHS_OBJ) $(OBJS) $(INCS)
 	@ar rcs $(NAME) $(OBJS)
-	@echo "$(TEXT_MOD_1)Library ready for use ! 🚀 $(RESET)\n"
+#	@echo "$(TEXT_MOD_1)Library ready for use ! 🚀 $(RESET)\n"
 
 
 $(PATHS_OBJ):
 	@mkdir $@
 
 $(PATH_OBJ)%.o: $(PATH_SRC)%.c $(INCS)
-	@printf %b "  $(TEXT_MOD_2)Compiling$(RESET) $(TEXT_MOD_3)$<...$(RESET)"
+#	@printf %b "  $(TEXT_MOD_2)Compiling$(RESET) $(TEXT_MOD_3)$<...$(RESET)"
 	@$(CC) $(ALL_FLAGS) -I $(PATH_INC) -o $@ -c $<
-	@printf "\r"
-	@printf "                                                                                     \r"
+#	@printf "\r"
+#	@printf "                                                                                     \r"
 
 -include $(OBJS:.o=.d)
 
