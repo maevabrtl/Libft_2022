@@ -75,7 +75,7 @@ SRC_STRS := $(addprefix $(PATH_SRC_STRS), $(addsuffix .c , $(FILES_STRS)))
 PATH_SRC_PRINTS := $(PATH_SRC)Prints/
 PATH_OBJ_PRINTS := $(PATH_OBJ)Prints/
 FILES_PRINTS := ft_putchar_fd ft_putendl_fd ft_putnbr_fd ft_putstr_fd\
-				ft_putstr_withsize_fd
+				# ft_putstr_withsize_fd
 OBJ_PRINTS := $(addprefix $(PATH_OBJ_PRINTS), $(addsuffix .o , $(FILES_PRINTS)))
 SRC_PRINTS := $(addprefix $(PATH_SRC_PRINTS), $(addsuffix .c , $(FILES_PRINTS)))
 
@@ -103,14 +103,14 @@ SRC_PRINTS := $(addprefix $(PATH_SRC_PRINTS), $(addsuffix .c , $(FILES_PRINTS)))
 #                                     ALL                                      #
 #******************************************************************************#
 
-PATHS_OBJ := $(PATH_OBJ) $(PATH_OBJ_CHARS) $(PATH_OBJ_GNL) $(PATH_OBJ_CONV)\
+PATHS_OBJ := $(PATH_OBJ) $(PATH_OBJ_CHARS) $(PATH_OBJ_CONV)\
 		$(PATH_OBJ_LISTS) $(PATH_OBJ_MEMORY) $(PATH_OBJ_PRINTS) $(PATH_OBJ_STRS)\
 		# $(PATH_OBJ_PRINTF) $(PATH_OBJ_GNL)
-OBJS := $(OBJ_CHARS) $(OBJ_GNL) $(OBJ_CONV) $(OBJ_LISTS) $(OBJ_MEMORY)\
+OBJS := $(OBJ_CHARS) $(OBJ_CONV) $(OBJ_LISTS) $(OBJ_MEMORY)\
 		$(OBJ_PRINTS) $(OBJ_STRS) # $(OBJ_PRINTF) $(OBJ_GNL)
-SRCS := $(SRC_CHARS) $(SRC_GNL) $(SRC_CONV) $(SRC_LISTS) $(SRC_MEMORY)\
+SRCS := $(SRC_CHARS) $(SRC_CONV) $(SRC_LISTS) $(SRC_MEMORY)\
 		$(SRC_PRINTS) $(SRC_STRS) # $(SRC_PRINTF) $(SRC_GNL)
-FILES := $(FILES_CHARS) $(FILES_GNL) $(FILES_CONV) $(FILES_LISTS)\
+FILES := $(FILES_CHARS) $(FILES_CONV) $(FILES_LISTS)\
 		$(FILES_MEMORY) $(FILES_PRINTS) $(FILES_STRS) # $(FILES_PRINTF)\
 		# $(FILES_GNL)
 
@@ -118,7 +118,10 @@ FILES := $(FILES_CHARS) $(FILES_GNL) $(FILES_CONV) $(FILES_LISTS)\
 #                                   RULES                                     #
 #*****************************************************************************#
 
-all: $(NAME)
+all::
+	@echo
+
+all:: $(NAME)
 
 clean:
 	@rm -rf $(PATH_OBJ)
@@ -134,17 +137,34 @@ re: fclean all
 
 $(NAME): $(PATHS_OBJ) $(OBJS) $(INCS)
 	@ar rcs $(NAME) $(OBJS)
-	@echo "\n$(TEXT_MOD)Library ready for use ! 🚀 $(RESET)\n"
+	@echo "$(TEXT_MOD_1)Library ready for use ! 🚀 $(RESET)\n"
 
 
 $(PATHS_OBJ):
-	@mkdir -p $@
+	@mkdir $@
 
-$(PATH_OBJ)%.o: $(PATH_SRC)%.c
-	@$(CC) $(CC_FLAGS) -I $(PATH_INC) -o $@ -c $<
+$(PATH_OBJ)%.o: $(PATH_SRC)%.c $(INCS)
+	@printf %b "  $(TEXT_MOD_2)Compiling$(RESET) $(TEXT_MOD_3)$<...$(RESET)"
+	@$(CC) $(ALL_FLAGS) -I $(PATH_INC) -o $@ -c $<
+	@printf "\r"
+	@printf "                                                                                     \r"
+
+-include $(OBJS:.o=.d)
 
 #*****************************************************************************#
-#                                   Output                                    #
+#                                Funny part                                   #
 #*****************************************************************************#
 
-TEXT_MOD = $(ADD_TEXT_MOD)$(BOLD)$(FONT)$(CYAN)$(END_MOD)
+TEXT_MOD_1 = $(ADD_TEXT_MOD)$(BOLD)$(FONT)$(CYAN)$(END_MOD)
+TEXT_MOD_2 = $(ADD_TEXT_MOD)$(FONT)$(CYAN)$(END_MOD)
+TEXT_MOD_3 = $(ADD_TEXT_MOD)$(BOLD)$(ITALIC)$(FONT)$(BLUE)$(END_MOD)
+
+me:
+	@true
+a:
+	@true
+sandwich:
+	@if [ `id -u` != 0 ]; then echo "What? Make it yourself."; else echo "Ok..."; fi
+
+# <The thing you want to make>: <the stuff you need to make it>
+#     <The steps to make it>
