@@ -6,7 +6,7 @@
 /*   By: Maya <Maya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 13:53:58 by mabertha          #+#    #+#             */
-/*   Updated: 2024/02/05 21:21:13 by Maya             ###   ########.fr       */
+/*   Updated: 2024/02/11 16:07:00 by Maya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <unistd.h>
 # include <stddef.h>
 # include "printf.h"
-// # include "gnl.h"
+# include "get_next_line.h"
 
 typedef struct	s_list
 {

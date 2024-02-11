@@ -1,6 +1,6 @@
-#include "../../Includes/gnl.h"
+#include "../../Includes/get_next_line.h"
 
-char	*ft_free(char **s)
+char	*ft_free_gnl(char **s)
 {
 	if (*s != NULL)
 		free(*s);
@@ -8,7 +8,7 @@ char	*ft_free(char **s)
 	return (NULL);
 }
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strlen_gnl(const char *s)
 {
 	size_t	i;
 
@@ -18,7 +18,7 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-int	ft_strchr_index(const char *s, int tofind)
+int	ft_strchr_index_gnl(const char *s, int tofind)
 {
 	int	i;
 
@@ -32,7 +32,7 @@ int	ft_strchr_index(const char *s, int tofind)
 	return (-1);
 }
 
-void	ft_bzero(void *s, size_t n)
+void	ft_bzero_gnl(void *s, size_t n)
 {
 	size_t			i;
 	unsigned char	*str;
@@ -46,13 +46,13 @@ void	ft_bzero(void *s, size_t n)
 	}
 }
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc_gnl(size_t nmemb, size_t size)
 {
 	void	*str;
 
 	str = malloc(nmemb * size);
 	if (str == NULL)
 		return (NULL);
-	ft_bzero(str, nmemb * size);
+	ft_bzero_gnl(str, nmemb * size);
 	return (str);
 }

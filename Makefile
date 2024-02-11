@@ -93,11 +93,11 @@ SRC_PRINTS := $(addprefix $(PATH_SRC_PRINTS), $(addsuffix .c , $(FILES_PRINTS)))
 #                                      GNL                                     #
 #******************************************************************************#
 
-# PATH_SRC_GNL := $(PATH_SRC)GNL/
-# PATH_OBJ_GNL := $(PATH_OBJ)GNL/
-# FILES_GNL := get_next_line get_next_line_utils
-# OBJ_GNL := $(addprefix $(PATH_OBJ_GNL), $(addsuffix .o , $(FILES_GNL)))
-# SRC_GNL := $(addprefix $(PATH_SRC_GNL), $(addsuffix .c , $(FILES_GNL)))
+PATH_SRC_GNL := $(PATH_SRC)GNL/
+PATH_OBJ_GNL := $(PATH_OBJ)GNL/
+FILES_GNL := get_next_line get_next_line_utils
+OBJ_GNL := $(addprefix $(PATH_OBJ_GNL), $(addsuffix .o , $(FILES_GNL)))
+SRC_GNL := $(addprefix $(PATH_SRC_GNL), $(addsuffix .c , $(FILES_GNL)))
 
 #******************************************************************************#
 #                                     ALL                                      #
@@ -105,14 +105,14 @@ SRC_PRINTS := $(addprefix $(PATH_SRC_PRINTS), $(addsuffix .c , $(FILES_PRINTS)))
 
 PATHS_OBJ := $(PATH_OBJ) $(PATH_OBJ_CHARS) $(PATH_OBJ_CONV)\
 		$(PATH_OBJ_LISTS) $(PATH_OBJ_MEMORY) $(PATH_OBJ_PRINTS) $(PATH_OBJ_STRS)\
-		# $(PATH_OBJ_PRINTF) $(PATH_OBJ_GNL)
+		$(PATH_OBJ_GNL) # $(PATH_OBJ_PRINTF)
 OBJS := $(OBJ_CHARS) $(OBJ_CONV) $(OBJ_LISTS) $(OBJ_MEMORY)\
-		$(OBJ_PRINTS) $(OBJ_STRS) # $(OBJ_PRINTF) $(OBJ_GNL)
+		$(OBJ_PRINTS) $(OBJ_STRS) $(OBJ_GNL) # $(OBJ_PRINTF)
 SRCS := $(SRC_CHARS) $(SRC_CONV) $(SRC_LISTS) $(SRC_MEMORY)\
-		$(SRC_PRINTS) $(SRC_STRS) # $(SRC_PRINTF) $(SRC_GNL)
+		$(SRC_PRINTS) $(SRC_STRS) $(SRC_GNL) # $(SRC_PRINTF)
 FILES := $(FILES_CHARS) $(FILES_CONV) $(FILES_LISTS)\
-		$(FILES_MEMORY) $(FILES_PRINTS) $(FILES_STRS) # $(FILES_PRINTF)\
-		# $(FILES_GNL)
+		$(FILES_MEMORY) $(FILES_PRINTS) $(FILES_STRS) $(FILES_GNL)\
+		# $(FILES_PRINTF)
 
 #*****************************************************************************#
 #                                   RULES                                     #
@@ -134,17 +134,17 @@ re: fclean all
 
 $(NAME): $(PATHS_OBJ) $(OBJS) $(INCS)
 	@ar rcs $(NAME) $(OBJS)
-#	@echo "$(TEXT_MOD_1)Library ready for use ! 🚀 $(RESET)\n"
+	@echo "$(TEXT_MOD_1)Library ready for use ! 🚀 $(RESET)\n"
 
 
 $(PATHS_OBJ):
 	@mkdir $@
 
 $(PATH_OBJ)%.o: $(PATH_SRC)%.c $(INCS)
-#	@printf %b "  $(TEXT_MOD_2)Compiling$(RESET) $(TEXT_MOD_3)$<...$(RESET)"
+	@printf %b "  $(TEXT_MOD_2)Compiling$(RESET) $(TEXT_MOD_3)$<...$(RESET)"
 	@$(CC) $(ALL_FLAGS) -I $(PATH_INC) -o $@ -c $<
-#	@printf "\r"
-#	@printf "                                                                                     \r"
+	@printf "\r"
+	@printf "                                                                                     \r"
 
 -include $(OBJS:.o=.d)
 

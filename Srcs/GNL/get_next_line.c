@@ -1,15 +1,15 @@
-#include "../../Includes/gnl.h"
+#include "../../Includes/get_next_line.h"
 
 int	get_len_to_malloc(char buf[BUFFER_SIZE + 1], char *previous_line)
 {
 	int	index_newline;
 
-	index_newline = ft_strchr_index(buf, '\n');
+	index_newline = ft_strchr_index_gnl(buf, '\n');
 	if (index_newline == -1)
-		index_newline = ft_strlen(buf);
+		index_newline = ft_strlen_gnl(buf);
 	else
 		index_newline++;
-	return(ft_strlen(previous_line) + index_newline + 1);
+	return(ft_strlen_gnl(previous_line) + index_newline + 1);
 }
 
 char	*join_to_nl(char *previous_line, char buf[BUFFER_SIZE + 1])
@@ -20,7 +20,7 @@ char	*join_to_nl(char *previous_line, char buf[BUFFER_SIZE + 1])
 
 	new = malloc(sizeof(char) * get_len_to_malloc(buf, previous_line));
 	if (new == NULL)
-		return (ft_free(&previous_line));
+		return (ft_free_gnl(&previous_line));
 	i = 0;
 	j = 0;
 	while (previous_line && previous_line[i])
@@ -31,7 +31,7 @@ char	*join_to_nl(char *previous_line, char buf[BUFFER_SIZE + 1])
 	if (buf[i] == '\n')
 		new[j++] = buf[i++];
 	new[j] = '\0';
-	ft_free(&previous_line);
+	ft_free_gnl(&previous_line);
 	return (new);
 }
 
@@ -42,7 +42,7 @@ int	clear_buf(char *buf)
 	char	*tocopy;
 
 	i = 0;
-	index_newline = ft_strchr_index(buf, '\n');
+	index_newline = ft_strchr_index_gnl(buf, '\n');
 	tocopy = &buf[index_newline + 1];
 	if (index_newline != -1)
 	{
@@ -55,7 +55,7 @@ int	clear_buf(char *buf)
 			buf[i++] = '\0';
 	}
 	else
-		ft_bzero(buf, BUFFER_SIZE + 1);
+		ft_bzero_gnl(buf, BUFFER_SIZE + 1);
 
 	return (index_newline);
 }
@@ -82,7 +82,7 @@ char	*get_next_line(int fd)
 		}
 		nb_read = read(fd, buf[fd], BUFFER_SIZE);
 		if (nb_read == -1)
-			return (ft_free(&line));
+			return (ft_free_gnl(&line));
 	}
 	return (line);
 }
