@@ -118,10 +118,7 @@ FILES := $(FILES_CHARS) $(FILES_CONV) $(FILES_LISTS)\
 #                                   RULES                                     #
 #*****************************************************************************#
 
-all::
-	@echo
-
-all:: $(NAME)
+all: $(NAME) // that
 
 clean:
 	@rm -rf $(PATH_OBJ)
