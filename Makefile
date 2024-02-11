@@ -137,7 +137,7 @@ re: fclean all
 
 $(NAME): $(PATHS_OBJ) $(OBJS) $(INCS)
 	@ar rcs $(NAME) $(OBJS)
-	@echo "$(TEXT_MOD_1)Library ready for use ! 🚀 $(RESET)\n"
+#	@echo "$(TEXT_MOD_1)Library ready for use ! 🚀 $(RESET)\n"
 
 
 $(PATHS_OBJ):
