@@ -118,7 +118,7 @@ FILES := $(FILES_CHARS) $(FILES_CONV) $(FILES_LISTS)\
 #                                   RULES                                     #
 #*****************************************************************************#
 
-all: $(NAME) // that
+all: $(NAME)
 
 clean:
 	@rm -rf $(PATH_OBJ)
@@ -141,10 +141,10 @@ $(PATHS_OBJ):
 	@mkdir $@
 
 $(PATH_OBJ)%.o: $(PATH_SRC)%.c $(INCS)
-	@printf %b "  $(TEXT_MOD_2)Compiling$(RESET) $(TEXT_MOD_3)$<...$(RESET)"
+#	@printf %b "  $(TEXT_MOD_2)Compiling$(RESET) $(TEXT_MOD_3)$<...$(RESET)"
 	@$(CC) $(ALL_FLAGS) -I $(PATH_INC) -o $@ -c $<
-	@printf "\r"
-	@printf "                                                                                     \r"
+#	@printf "\r"
+#	@printf "                                                                                     \r"
 
 -include $(OBJS:.o=.d)
 
