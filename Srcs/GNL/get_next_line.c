@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabertha <mabertha@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/15 15:05:59 by mabertha          #+#    #+#             */
+/*   Updated: 2024/02/15 22:43:27 by mabertha         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../Includes/get_next_line.h"
 
 int	get_len_to_malloc(char buf[BUFFER_SIZE + 1], char *previous_line)
@@ -9,7 +21,7 @@ int	get_len_to_malloc(char buf[BUFFER_SIZE + 1], char *previous_line)
 		index_newline = ft_strlen_gnl(buf);
 	else
 		index_newline++;
-	return(ft_strlen_gnl(previous_line) + index_newline + 1);
+	return (ft_strlen_gnl(previous_line) + index_newline + 1);
 }
 
 char	*join_to_nl(char *previous_line, char buf[BUFFER_SIZE + 1])
@@ -56,7 +68,6 @@ int	clear_buf(char *buf)
 	}
 	else
 		ft_bzero_gnl(buf, BUFFER_SIZE + 1);
-
 	return (index_newline);
 }
 

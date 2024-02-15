@@ -131,15 +131,15 @@ re: fclean all
 #                                Compilation                                  #
 #*****************************************************************************#
 
-$(NAME): $(PATHS_OBJ) $(OBJS) $(INCS)
+$(NAME): $(PATHS_OBJ) $(OBJS) $(INCS) Makefile
 	@ar rcs $(NAME) $(OBJS)
-	@echo "$(TEXT_MOD_1)Library ready for use ! 🚀 $(RESET)\n"
+#	@echo "$(TEXT_MOD_1)Library ready for use ! 🚀 $(RESET)\n"
 
 
 $(PATHS_OBJ):
 	@mkdir $@
 
-$(PATH_OBJ)%.o: $(PATH_SRC)%.c $(INCS)
+$(PATH_OBJ)%.o: $(PATH_SRC)%.c $(INCS) Makefile
 	@printf %b "  $(TEXT_MOD_2)Compiling$(RESET) $(TEXT_MOD_3)$<...$(RESET)"
 	@$(CC) $(ALL_FLAGS) -I $(PATH_INC) -o $@ -c $<
 	@printf "\r"

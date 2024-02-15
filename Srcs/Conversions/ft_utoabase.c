@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_utoabase.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabertha <mabertha@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/15 15:03:52 by mabertha          #+#    #+#             */
+/*   Updated: 2024/02/15 15:04:41 by mabertha         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static size_t	utoa_nbrlen(size_t n, int base)
@@ -13,9 +25,9 @@ static size_t	utoa_nbrlen(size_t n, int base)
 	return (nlen);
 }
 
-char		*check_base(int majbase, int base)
+char	*check_base(int majbase, int base)
 {
-	char *str;
+	char	*str;
 
 	if (majbase == 1 && base == 16)
 		str = "0123456789ABCDEF";
@@ -28,7 +40,7 @@ char		*check_base(int majbase, int base)
 	return (str);
 }
 
-char		*ft_utoabase(size_t n, int base, int majbase)
+char	*ft_utoabase(size_t n, int base, int majbase)
 {
 	char	*ret;
 	size_t	nlen;
