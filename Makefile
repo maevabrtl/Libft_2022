@@ -6,8 +6,7 @@ NAME := libft.a
 CC := gcc
 MANDATORY_FLAGS := -Wall -Wextra -Werror
 DEPS_FLAGS := -MMD -MP
-CC_FLAGS := -fsanitize=address -g3
-ALL_FLAGS = $(MANDATORY_FLAGS) $(CC_FLAGS) $(DEPS_FLAGS)
+ALL_FLAGS = $(MANDATORY_FLAGS) $(DEPS_FLAGS)
 PATH_OBJ := ./Objs/
 PATH_SRC := ./Srcs/
 PATH_INC := ./Includes/

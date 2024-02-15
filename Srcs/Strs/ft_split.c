@@ -47,7 +47,7 @@ static char *write_w(char const *str, int len)
   return (word);
 }
 
-static void ft_free(char **res, int len)
+static void ft_free_split(char **res, int len)
 {
   int i;
 
@@ -75,7 +75,7 @@ char  **ft_split(char const *str, char sep)
     res[i] = write_w(str, size_w(str, sep));
     if (!res[i])
     {
-      ft_free(res, i);
+      ft_free_split(res, i);
       return (NULL);
     }
     while (*str && *str != sep)

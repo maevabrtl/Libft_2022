@@ -62,11 +62,11 @@ int	clear_buf(char *buf)
 
 char	*get_next_line(int fd)
 {
-	static char	buf[OPEN_MAX][BUFFER_SIZE + 1];
+	static char	buf[FOPEN_MAX][BUFFER_SIZE + 1];
 	char		*line;
 	int			nb_read;
 
-	if (fd == -1 || BUFFER_SIZE <= 0 || fd >= OPEN_MAX)
+	if (fd == -1 || BUFFER_SIZE <= 0 || fd >= FOPEN_MAX)
 		return (NULL);
 	line = NULL;
 	nb_read = 1;
